@@ -24,6 +24,7 @@
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
     "react-native-web": "0.17.7",
+    "react-query": "^3.39.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
@@ -63,14 +64,19 @@
   "prettier": "@twgdev/prettier-config",
   "jest": {
     "preset": "jest-expo",
-    "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
     ]
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
-    "extends": ["eslint-config-twg/typescript.js", "prettier"],
+    "extends": [
+      "eslint-config-twg/typescript.js",
+      "prettier"
+    ],
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
