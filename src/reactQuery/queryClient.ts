@@ -1,5 +1,5 @@
 import { QueryClient } from 'react-query'
 
 export const queryClient = new QueryClient({
-  defaultOptions: { queries: { cacheTime: 'Infinity' as any, staleTime: 30000 } },
+  defaultOptions: { queries: { staleTime: 60 * 1000 } },
 })
