@@ -1,5 +1,5 @@
 import { Unsubscribe, User } from 'firebase/auth'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useQuery, useQueryClient } from 'react-query'
 import { auth } from '../../firebase/setup'
 import { QUERY_KEYS } from './queryKeys'
@@ -8,8 +8,7 @@ let userSubscriptionEventsCount = 0
 
 export const useCurrentUserQuery = () => {
   const queryClient = useQueryClient()
-
-  let unsubscribe: Unsubscribe
+  const unsubscribeRef = useRef<Unsubscribe>()
 
   let resolvePromise: (data: User | null) => void = () => null
 
@@ -21,8 +20,10 @@ export const useCurrentUserQuery = () => {
   })
 
   useEffect(() => {
-    unsubscribe = auth.onAuthStateChanged(async (user) => {
+    unsubscribeRef.current = auth.onAuthStateChanged(async (user) => {
       userSubscriptionEventsCount++
+
+      await new Promise((resolve) => setTimeout(resolve, 2000))
 
       if (userSubscriptionEventsCount === 1) {
         resolvePromise(user)
@@ -32,9 +33,9 @@ export const useCurrentUserQuery = () => {
     })
 
     return () => {
-      unsubscribe?.()
+      unsubscribeRef?.current?.()
     }
-  }, [])
+  }, [queryClient])
 
   return useQuery<User>([QUERY_KEYS.CURRENT_USER], {
     queryFn: () => result as Promise<User>,
