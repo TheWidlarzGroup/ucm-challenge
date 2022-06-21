@@ -1,8 +1,9 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Text } from 'react-native'
+import { CustomButtonContainer } from './CustomButton.styled'
 
 export const CustomButton = () => (
-  <View>
+  <CustomButtonContainer>
     <Text>Button</Text>
-  </View>
+  </CustomButtonContainer>
 )

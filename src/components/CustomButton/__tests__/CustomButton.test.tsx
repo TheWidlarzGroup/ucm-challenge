@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native'
+import { render } from '../../../test/test-utils'
 import { CustomButton } from '../CustomButton'
 
 describe('<CustomButton />', () => {

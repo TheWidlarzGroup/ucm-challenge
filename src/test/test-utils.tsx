@@ -1,0 +1,20 @@
+import { JSXElementConstructor, PropsWithChildren, ReactElement } from 'react'
+import { render, RenderOptions } from '@testing-library/react-native'
+import { ThemeProvider } from 'styled-components/native'
+import { theme } from '../theme/theme'
+
+const AllProviders = ({ children }: PropsWithChildren<unknown>) => (
+  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+)
+
+const customRender = (
+  // eslint-disable-next-line
+  ui: ReactElement<any | string | JSXElementConstructor<any>>,
+  options?: RenderOptions
+) => render(ui, { wrapper: AllProviders, ...options })
+
+// re-export everything
+export * from '@testing-library/react-native'
+
+// override render method
+export { customRender as render }
