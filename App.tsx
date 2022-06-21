@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
 import { GlobalProviders } from './src/providers/GlobalProviders'
+import { firebaseApp as _firebaseApp } from './src/firebase/setup'
 
 export default function App() {
   return (
