@@ -2,9 +2,13 @@ import { JSXElementConstructor, PropsWithChildren, ReactElement } from 'react'
 import { render, RenderOptions } from '@testing-library/react-native'
 import { ThemeProvider } from 'styled-components/native'
 import { theme } from '../theme/theme'
+import { QueryClientProvider } from 'react-query'
+import { queryClient } from '../reactQuery/queryClient'
 
 const AllProviders = ({ children }: PropsWithChildren<unknown>) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  <QueryClientProvider client={queryClient}>
+    <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  </QueryClientProvider>
 )
 
 const customRender = (
