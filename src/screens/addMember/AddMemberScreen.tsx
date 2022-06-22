@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { Text, View } from 'react-native'
+import { Image, Text, View } from 'react-native'
+import { images } from '../../assets/images/images'
 import { useJobsQuery } from '../../reactQuery/queries/useJobsQuery'
 
 export const AddMemberScreen = () => {
@@ -12,6 +13,7 @@ export const AddMemberScreen = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Add member</Text>
+      <Image source={images.backArrow} />
     </View>
   )
 }

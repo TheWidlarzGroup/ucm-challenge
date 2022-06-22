@@ -1,5 +1,6 @@
 import { theme } from '../theme/theme'
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack'
+import { HeaderLeft } from '../components/HeaderLeft/HeaderLeft'
 
 export const screenDefaultOptions: NativeStackNavigationOptions = {
   headerShadowVisible: false,
@@ -14,4 +15,6 @@ export const screenDefaultOptions: NativeStackNavigationOptions = {
     color: theme.colors.primaryDark,
     fontSize: theme.fontSizes.l,
   },
+  headerBackVisible: false,
+  headerLeft: HeaderLeft,
 }
