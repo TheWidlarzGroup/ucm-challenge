@@ -1,10 +1,10 @@
 import { TextProps } from 'react-native'
 import styled, { DefaultTheme } from 'styled-components/native'
-import { theme } from '../../theme/theme'
 
 interface CustomTextProps extends TextProps {
   fontWeight?: 'bold' | 'medium' | 'black'
   fontSize?: keyof DefaultTheme['fontSizes']
+  color?: keyof DefaultTheme['colors']
   textAlign?: 'left' | 'right' | 'center'
 }
 
@@ -23,7 +23,7 @@ const getFont = (fontWeight: CustomTextProps['fontWeight'], theme: DefaultTheme)
 
 export const CustomText = styled.Text<CustomTextProps>`
   font-family: ${({ theme, fontWeight = 'medium' }) => getFont(fontWeight, theme)};
-  font-size: ${({ fontSize = 'm' }) => theme.fontSizes[fontSize]}px;
-  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme, fontSize = 'm' }) => theme.fontSizes[fontSize]}px;
+  color: ${({ theme, color = 'primaryDark' }) => theme.colors[color]};
   text-align: ${({ textAlign = 'left' }) => textAlign};
 `

@@ -9,7 +9,7 @@ type Props = {
 
 export const CustomButton = ({ title, onPress }: Props) => (
   <CustomButtonContainer onPress={onPress}>
-    <CustomText textAlign="center" fontSize="m" fontWeight="bold">
+    <CustomText textAlign="center" fontSize="m" fontWeight="bold" color="white">
       {title}
     </CustomText>
   </CustomButtonContainer>
