@@ -5,7 +5,8 @@ export type UnauthorizedNavigatorParams = {
 }
 
 export type AuthorizedNavigatorParams = {
-  [AuthorizedRoutes.USERS_LIST]: undefined
+  [AuthorizedRoutes.MEMBERS_LIST]: undefined
+  [AuthorizedRoutes.ADD_MEMBER]: undefined
 }
 
 export type NavigatorsParams = {
