@@ -21,7 +21,7 @@ export const MembersListScreen = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Users screen</Text>
+      <Text style={{ fontFamily: 'Nunito_900Black', fontSize: 40 }}>Users screen</Text>
       <Button title="signout" onPress={logout} />
       <Button title="add member" onPress={handleAddMemberPress} />
     </View>
