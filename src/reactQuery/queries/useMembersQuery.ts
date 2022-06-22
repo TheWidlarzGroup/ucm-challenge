@@ -1,4 +1,4 @@
-import { getDoc, getDocs } from 'firebase/firestore'
+import { getDoc, getDocs, orderBy, query } from 'firebase/firestore'
 import { useQuery } from 'react-query'
 import { membersCollection } from '../../firebase/collections'
 import { QUERY_KEYS } from './queryKeys'
@@ -7,7 +7,7 @@ const getMembersList = async () => {
   try {
     const members: UCM.Member[] = []
 
-    const membersSnapshot = await getDocs(membersCollection)
+    const membersSnapshot = await getDocs(query(membersCollection, orderBy('createdAt', 'desc')))
 
     for (const ms of membersSnapshot.docs) {
       const member = ms.data()
