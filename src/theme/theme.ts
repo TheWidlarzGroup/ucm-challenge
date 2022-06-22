@@ -14,5 +14,23 @@ export const theme = {
   },
   fontSizes: {
     l: 20,
+    m: 18,
+    s: 16,
+    xs: 14,
+    xxs: 12,
+  },
+  spacings: {
+    xs: 4,
+    s: 8,
+    m: 16,
+    l: 24,
+  },
+  lineHeights: {
+    xl: 24,
+    l: 22,
+    m: 20,
+  },
+  borderRadius: {
+    s: 3,
   },
 } as const
