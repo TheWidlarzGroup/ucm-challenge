@@ -8,8 +8,7 @@ declare namespace UCM {
 
   type Member = {
     id: string
-    firstName: string
-    lastName: string
+    name: string
     createdAt: Date
     job?: Job
   }

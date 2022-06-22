@@ -19,7 +19,7 @@ export const MemberListElement = ({ member }: Props) => {
       </MemberListElementSide>
       <MemberListElementMain>
         <CustomText fontWeight="bold" color="primary">
-          {`${member.firstName} ${member.lastName}`}
+          {member?.name || ''}
         </CustomText>
         <CustomText fontWeight="medium" color="neutral">
           {`ID: ${member.id}`}
