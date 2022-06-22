@@ -1,6 +1,4 @@
 declare namespace UCM {
-  import { QueryDocumentSnapshot } from 'firebase/firestore'
-
   type CollectionKeys = 'members' | 'jobs'
 
   type Job = {
