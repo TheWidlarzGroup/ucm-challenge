@@ -1,5 +1,5 @@
 export enum AuthorizedRoutes {
-  USERS_LIST = 'USERS_LIST',
+  MEMBERS_LIST = 'MEMBERS_LIST',
 }
 
 export enum UnauthorizedRoutes {
