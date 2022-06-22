@@ -1,9 +1,16 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { CustomText } from '../CustomText/CustomText.styled'
 import { CustomButtonContainer } from './CustomButton.styled'
 
-export const CustomButton = () => (
-  <CustomButtonContainer>
-    <Text>Button</Text>
+type Props = {
+  title: string
+  onPress?: F0
+}
+
+export const CustomButton = ({ title, onPress }: Props) => (
+  <CustomButtonContainer onPress={onPress}>
+    <CustomText textAlign="center" fontSize="m" fontWeight="bold">
+      {title}
+    </CustomText>
   </CustomButtonContainer>
 )
