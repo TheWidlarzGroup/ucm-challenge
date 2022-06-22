@@ -3,6 +3,7 @@ import {
   DocumentData,
   collection,
   DocumentReference,
+  Timestamp,
 } from 'firebase/firestore'
 import { firestore } from './setup'
 
@@ -11,6 +12,7 @@ const getCollection = <T = DocumentData>(collectionName: UCM.CollectionKeys) =>
 
 type MemberRaw = UCM.Member & {
   job: DocumentReference<UCM.Job>
+  createdAt: Timestamp
 }
 
 export const membersCollection = getCollection<MemberRaw>('members')

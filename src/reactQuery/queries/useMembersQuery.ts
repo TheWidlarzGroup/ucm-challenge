@@ -17,6 +17,7 @@ const getMembersList = async () => {
         ...member,
         id: ms.id,
         job: undefined,
+        createdAt: member.createdAt.toDate(),
       }
 
       if (jobSnapshot.exists()) {

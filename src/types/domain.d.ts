@@ -10,6 +10,7 @@ declare namespace UCM {
     id: string
     firstName: string
     lastName: string
+    createdAt: Date
     job?: Job
   }
 }
