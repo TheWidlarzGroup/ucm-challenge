@@ -23,8 +23,6 @@ export const useCurrentUserQuery = () => {
     unsubscribeRef.current = auth.onAuthStateChanged(async (user) => {
       userSubscriptionEventsCount++
 
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-
       if (userSubscriptionEventsCount === 1) {
         resolvePromise(user)
       } else {
