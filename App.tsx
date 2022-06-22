@@ -4,6 +4,7 @@ import { firebaseApp as _firebaseApp } from './src/firebase/setup'
 import { RootNavigator } from './src/navigators/rootNavigator'
 import { useFontLoader } from './src/hooks/useFontLoader'
 import { View } from 'react-native'
+import { theme } from './src/theme/theme'
 
 export default function App() {
   const { appIsReady, onLayoutRootView } = useFontLoader()
@@ -16,7 +17,7 @@ export default function App() {
     <View style={{ flex: 1, justifyContent: 'center' }} onLayout={onLayoutRootView}>
       <GlobalProviders>
         <RootNavigator />
-        <StatusBar style="auto" />
+        <StatusBar backgroundColor={theme.colors.secondary} />
       </GlobalProviders>
     </View>
   )
