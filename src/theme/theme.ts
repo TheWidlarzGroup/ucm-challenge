@@ -6,6 +6,7 @@ export const theme = {
     neutral: '#8E8E8E',
     gray: '#DDDDDD',
     white: '#FFFFFF',
+    error: '#ff3333',
   },
   fonts: {
     nunitoBlack: 'Nunito_900Black',
@@ -32,5 +33,6 @@ export const theme = {
   },
   borderRadius: {
     s: 3,
+    m: 7,
   },
 } as const
