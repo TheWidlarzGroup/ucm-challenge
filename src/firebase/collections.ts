@@ -6,9 +6,8 @@ import {
 } from 'firebase/firestore'
 import { firestore } from './setup'
 
-const getCollection = <T = DocumentData>(collectionName: UCM.CollectionKeys) => {
-  return collection(firestore, collectionName) as CollectionReference<T>
-}
+const getCollection = <T = DocumentData>(collectionName: UCM.CollectionKeys) =>
+  collection(firestore, collectionName) as CollectionReference<T>
 
 type MemberRaw = UCM.Member & {
   job: DocumentReference<UCM.Job>

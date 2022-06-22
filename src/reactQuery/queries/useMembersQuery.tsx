@@ -35,8 +35,7 @@ const getMembersList = async () => {
   }
 }
 
-export const useMembersQuery = () => {
-  return useQuery<UCM.Member[]>([QUERY_KEYS.MEMBERS_LIST], {
+export const useMembersQuery = () =>
+  useQuery<UCM.Member[]>([QUERY_KEYS.MEMBERS_LIST], {
     queryFn: getMembersList,
   })
-}

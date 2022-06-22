@@ -20,7 +20,7 @@ export const useCurrentUserQuery = () => {
   })
 
   useEffect(() => {
-    unsubscribeRef.current = auth.onAuthStateChanged(async (user) => {
+    unsubscribeRef.current = auth.onAuthStateChanged((user) => {
       userSubscriptionEventsCount++
 
       if (userSubscriptionEventsCount === 1) {
