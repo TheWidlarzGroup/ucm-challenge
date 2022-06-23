@@ -5,5 +5,7 @@ export enum AuthorizedRoutes {
 
 export enum UnauthorizedRoutes {
   LOGIN = 'LOGIN',
+  SIGN_UP = 'SIGN_UP',
+  UNAUTHORIZED = 'UNAUTHORIZED',
   AUTHORIZING = 'AUTHORIZING',
 }

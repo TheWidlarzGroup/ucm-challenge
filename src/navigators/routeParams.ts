@@ -1,7 +1,10 @@
 import { AuthorizedRoutes, UnauthorizedRoutes } from './routes'
 
 export type UnauthorizedNavigatorParams = {
+  [UnauthorizedRoutes.UNAUTHORIZED]: undefined
+  [UnauthorizedRoutes.AUTHORIZING]: undefined
   [UnauthorizedRoutes.LOGIN]: undefined
+  [UnauthorizedRoutes.SIGN_UP]: undefined
 }
 
 export type AuthorizedNavigatorParams = {

@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import { useEffect } from 'react'
-import { Text, View } from 'react-native'
+import { ActivityIndicator, View } from 'react-native'
+import { CustomText } from '../../components/CustomText/CustomText.styled'
 import { UnauthorizedRoutes } from '../../navigators/routes'
 import { useCurrentUserQuery } from '../../reactQuery/queries/useCurrentUserQuery'
 import { theme } from '../../theme/theme'
@@ -16,13 +17,15 @@ export const AuthorizingScreen = () => {
       timeoutId = setTimeout(() => {
         reset({
           index: 0,
-          routes: [{ name: UnauthorizedRoutes.LOGIN }],
+          routes: [{ name: UnauthorizedRoutes.UNAUTHORIZED }],
         })
       }, 0)
     }
 
     return () => {
-      timeoutId && clearTimeout(timeoutId)
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
     }
   }, [isLoading, user, reset, isIdle])
 
@@ -34,7 +37,10 @@ export const AuthorizingScreen = () => {
         alignItems: 'center',
         backgroundColor: theme.colors.secondary,
       }}>
-      <Text>...</Text>
+      <ActivityIndicator color={theme.colors.primary} style={{ marginBottom: theme.spacings.l }} />
+      <CustomText fontSize="xs" fontWeight="medium">
+        Authorizing...
+      </CustomText>
     </View>
   )
 }

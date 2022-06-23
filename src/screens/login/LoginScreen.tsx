@@ -1,20 +1,23 @@
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { Button, Text, View } from 'react-native'
-import { auth } from '../../firebase/setup'
-import { useCurrentUserQuery } from '../../reactQuery/queries/useCurrentUserQuery'
-
-const login = () => {
-  signInWithEmailAndPassword(auth, 'grchtol.daniel@gmail.com', 'Admin!123')
-}
+import { Alert, View } from 'react-native'
+import { useLoginMutation } from '../../reactQuery/mutations/useLoginMutation'
+import { theme } from '../../theme/theme'
+import { AuthForm } from '../../validators/authValidator'
+import { LoginForm } from './components/LoginForm'
 
 export const LoginScreen = () => {
-  const { isLoading } = useCurrentUserQuery()
+  const { mutateAsync: logIn, isLoading } = useLoginMutation()
 
+  const submitSuccessCb = async (data: AuthForm) => {
+    try {
+      await logIn(data)
+      Alert.alert('Success!', 'Successfully sign in!')
+    } catch (e) {
+      Alert.alert('Upss...', 'Wrong credentials')
+    }
+  }
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Login screen</Text>
-      <Text>{isLoading ? 'Loading' : ''}</Text>
-      <Button title="login" onPress={login} />
+    <View style={{ flex: 1, justifyContent: 'center', backgroundColor: theme.colors.white }}>
+      <LoginForm isLoading={isLoading} onFormSubmit={submitSuccessCb} />
     </View>
   )
 }
