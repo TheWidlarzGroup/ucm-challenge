@@ -9,11 +9,12 @@ import {
   CustomTextInputWrapper,
 } from './CustomTextInput.styled'
 
-interface Props extends TextInputProps {
+export interface CustomTextInputProps extends TextInputProps {
   errorMsg?: string
+  label?: string
 }
 
-export const CustomTextInput = ({ errorMsg, ...textProps }: Props) => {
+export const CustomTextInput = ({ label, errorMsg, ...textProps }: CustomTextInputProps) => {
   const [isInputFocused, setIsInputFocus] = useState(false)
 
   const onFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
@@ -29,7 +30,7 @@ export const CustomTextInput = ({ errorMsg, ...textProps }: Props) => {
   return (
     <CustomTextInputWrapper>
       <CustomTextInputBorderedBox isInputFocused={isInputFocused} isError={!!errorMsg}>
-        <CustomInputLabel>Label</CustomInputLabel>
+        {label ? <CustomInputLabel>{label}</CustomInputLabel> : null}
         <CustomStyledTextInput
           numberOfLines={1}
           placeholder="Type something in..."
