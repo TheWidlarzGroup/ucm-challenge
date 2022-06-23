@@ -16,4 +16,5 @@ export const MemberListElementSide = styled.View`
 export const MemberListElementMain = styled.View`
   flex: 1;
   justify-content: center;
+  padding-right: ${({ theme }) => theme.spacings.m}px;
 `
