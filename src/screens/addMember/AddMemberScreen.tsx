@@ -1,19 +1,8 @@
-import { useEffect } from 'react'
-import { Image, Text, View } from 'react-native'
-import { images } from '../../assets/images/images'
-import { useJobsQuery } from '../../reactQuery/queries/useJobsQuery'
+import { SafeAreaScreen } from '../../components/SafeAreaScreen/SafeAreaScreen.styled'
+import { AddMemberForm } from './components/AddMemberForm/AddMemberForm'
 
-export const AddMemberScreen = () => {
-  const { data: jobs } = useJobsQuery()
-
-  useEffect(() => {
-    console.log(jobs)
-  }, [jobs])
-
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Add member</Text>
-      <Image source={images.backArrow} />
-    </View>
-  )
-}
+export const AddMemberScreen = () => (
+  <SafeAreaScreen edges={['bottom']}>
+    <AddMemberForm />
+  </SafeAreaScreen>
+)
