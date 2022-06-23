@@ -31,3 +31,7 @@ export const firebaseConfig = {
 Ask a team member to invite you to the Expo project so that you can download the latest JS build!
 
 Expo GO Link: exp://exp.host/@daniel_grychtol/ucm-challenge
+
+## Preview
+
+![iOS App walkthrough demo](./ios_demo.gif)
