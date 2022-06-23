@@ -4,6 +4,7 @@ export const theme = {
     primaryDark: '#114358',
     secondary: '#E6F4F1',
     neutral: '#8E8E8E',
+    neutral2: '#f6f6f6',
     gray: '#DDDDDD',
     white: '#FFFFFF',
     error: '#ff3333',
@@ -14,6 +15,7 @@ export const theme = {
     nunitoMedium: 'Nunito_500Medium',
   },
   fontSizes: {
+    xl: 24,
     l: 20,
     m: 18,
     s: 16,
