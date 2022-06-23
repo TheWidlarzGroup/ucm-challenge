@@ -30,6 +30,10 @@ export const firebaseConfig = {
 
 Ask a team member to invite you to the Expo project so that you can download the latest JS build!
 
+1. Have/install the Expo Go app on your device
+2. Log in with an email that the invitation was sent to
+3. Open the below link in the browser
+
 Expo GO Link: exp://exp.host/@daniel_grychtol/ucm-challenge
 
 ## Preview
