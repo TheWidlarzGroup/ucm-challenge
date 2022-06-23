@@ -14,17 +14,23 @@ export interface CustomTextInputProps extends TextInputProps {
   label?: string
 }
 
-export const CustomTextInput = ({ label, errorMsg, ...textProps }: CustomTextInputProps) => {
+export const CustomTextInput = ({
+  label,
+  errorMsg,
+  onBlur,
+  onFocus,
+  ...textProps
+}: CustomTextInputProps) => {
   const [isInputFocused, setIsInputFocus] = useState(false)
 
-  const onFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+  const handleOnFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     setIsInputFocus(true)
-    textProps?.onFocus?.(e)
+    onFocus?.(e)
   }
 
-  const onBlur = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+  const handleOnBlur = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     setIsInputFocus(false)
-    textProps?.onBlur?.(e)
+    onBlur?.(e)
   }
 
   return (
@@ -35,8 +41,8 @@ export const CustomTextInput = ({ label, errorMsg, ...textProps }: CustomTextInp
           numberOfLines={1}
           placeholder="Type something in..."
           placeholderTextColor={theme.colors.neutral}
-          onFocus={onFocus}
-          onBlur={onBlur}
+          onFocus={handleOnFocus}
+          onBlur={handleOnBlur}
           {...textProps}
         />
       </CustomTextInputBorderedBox>
